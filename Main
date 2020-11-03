@@ -1,0 +1,33 @@
+package Siaod2;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        HashTable hashTable = new HashTable(50);
+        FileReader fileReader = new FileReader("C:\\Users\\User\\IdeaProjects\\hello\\src\\Siaod2\\words.txt");
+        Scanner scan = new Scanner(fileReader);
+        for (; scan.hasNextLine(); ) {
+            hashTable.add(new Node(scan.nextLine()));
+        }
+        fileReader.close();
+        hashTable.print();
+        int value =0;
+        for(int i = 0; i < "car".length(); i++){
+            value = value +"car".charAt(i);
+        }
+        System.out.println(value + " " +value%50);
+        value =0;
+        for(int i = 0; i < "lawyer".length(); i++){
+            value = value +"lawyer".charAt(i);
+        }
+        System.out.println(value + " " +value%50);
+        value =0;
+        for(int i = 0; i < "aeroflot".length(); i++){
+            value = value +"aeroflot".charAt(i);
+        }
+        System.out.println(value + " " +value%50);
+    }
+}
